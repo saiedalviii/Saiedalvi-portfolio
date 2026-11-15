@@ -1,0 +1,6 @@
+export const projects = [
+{n:'01',dom:'Healthcare',t:'Reframe Stroke<br>Rehabilitation at Home',tg:'Reframe Stroke Rehabilitation at Home',d:'An interactive mat and companion app that makes post-discharge arm rehabilitation part of everyday home life.',tags:['Healthtech','UX Design','Interaction Design','Research','Prototype'],pos:'38% 50%',href:'#/project/stroke'},
+{n:'02',dom:'Automobile',t:'Recognition Reducing<br>Cognitive Load',tg:'Recognition Reducing Cognitive Load',d:'A predictable, personalized car interface with physical controls for key functions, designed to cut drivers distraction',tags:['HMI','UX Design','Visual Design','Cognitive Load','Prototype'],pos:'50% 50%'},
+{n:'03',dom:'Healthcare',t:'Health<br>Connect',tg:'Health Connect',d:'A service that places health workers in South African Spaza shops, so rural communities can report needs by SMS in real time.',tags:['Service Design','Research','Service blueprint','System thinking','Prototype'],pos:'50% 62%'},
+{n:'04',dom:'Education',t:'Educating Civic Sense Through<br>Gamification',tg:'Educating Civic Sense Through Gamification',d:'A play-based kit that teaches children everyday civic sense through a road-safety board game.',tags:['Gamification','Behaviour Design','Social Impact','Kit Design','Play Based Learning'],pos:'50% 50%',dark:1}
+];
