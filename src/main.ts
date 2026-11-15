@@ -58,10 +58,10 @@ document.getElementById('lnext').onclick=()=>{cur=(cur+1)%3;paint()};
 document.getElementById('lprev').onclick=()=>{cur=(cur+2)%3;paint()};paint();
 /* ---------- message (destination TBD) ---------- */
 async function sendMessage(text){
-  if(CONFIG.messageEndpoint){const r=await fetch(CONFIG.messageEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text})});return r.ok}
-  console.log('Message (no endpoint set yet):',text);return true;}
+  if(!CONFIG.messageEndpoint)return false;
+  const r=await fetch(CONFIG.messageEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text})});return r.ok;}
 document.getElementById('send').onclick=async()=>{const box=document.getElementById('msgbox'),lbl=document.getElementById('sendlbl'),t=box.value.trim();
-  if(!t){box.focus();return}lbl.textContent='Sending…';const ok=await sendMessage(t);lbl.textContent=ok?'Message sent':'Try again';
+  if(!t){box.focus();return}lbl.textContent='Sending…';const ok=await sendMessage(t);lbl.textContent=ok?'Message sent':CONFIG.messageEndpoint?'Try again':'Not configured';
   if(ok)box.value='';setTimeout(()=>lbl.textContent='Send message',2200)};
 /* ---------- footer: "Thankyou!" slides up through English, Marathi, German ---------- */
 (function(){var box=document.getElementById('thx');if(!box)return;var w=[].slice.call(box.children),i=0;if(w.length<2)return;
